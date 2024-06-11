@@ -9,6 +9,7 @@ import {
   User,
 } from '@phosphor-icons/react/dist/ssr';
 import { usePathname } from 'next/navigation';
+import CreatePost from './create-post';
 
 export default function MobileNavBottom() {
   const pathname = usePathname();
@@ -35,14 +36,9 @@ export default function MobileNavBottom() {
       ),
     },
     {
-      href: '/create',
+      href: '',
       label: 'Create',
-      icon: (
-        <PlusCircle
-          weight={pathname === '/create' ? 'fill' : 'regular'}
-          className="h-7 w-7"
-        />
-      ),
+      icon: <CreatePost />,
     },
     {
       href: '/activity',
@@ -67,7 +63,7 @@ export default function MobileNavBottom() {
   ];
 
   return (
-    <div className="fixed flex w-full p-5 items-center justify-between bottom-0 bg-white/90 backdrop-blur-xl z-10">
+    <div className="fixed flex w-full px-5 py-3 items-center justify-between bottom-0 bg-white/80 backdrop-blur-lg z-10 sm:hidden">
       {links.map(({ href, label, icon }) => (
         <Link key={href} href={href}>
           <span className="sr-only">{label}</span>

@@ -18,15 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          GeistSans.className
-        )}
-      >
-        <MobileNav />
-        {children}
-        <MobileNavBottom />
+      <body>
+        <div
+          className={cn(
+            'min-h-screen py-16 bg-background font-sans antialiased sm:bg-[#fafafa]',
+            GeistSans.className
+          )}
+        >
+          <MobileNav />
+          {children}
+          <MobileNavBottom />
+        </div>
       </body>
     </html>
   );
